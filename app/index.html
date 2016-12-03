@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" href="/app/prd/styles/app.css">
+</head>
+<body>
+	<div ng-controller="table">
+		<p>
+			<input type="text" placeholder="search firstName" ng-model="firstname">
+			<input type="text" placeholder="search lastName" ng-model="lastname">
+		</p>
+		<table>
+			<thead>
+				<tr>
+					<td ng-class="{'top':true}" ng-click="head(firstname,$event)" id="firstname">FirstName</td>
+					<td ng-click="head(LastName,$event)" ng-class="{'top':false}">LastName</td>
+					<td ng-click="head(Gender,$event)" ng-class="{'top':false}">Gender</td>
+					<td ng-click="head(Salary,$event)" ng-class="{'top':false}">Salary</td>
+					<td ng-click="head(Salary,$event)" ng-class="{'top':false}">Salary</td>
+					<td ng-click="head(Birthday,$event)" ng-class="{'top':false}">Birthday</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="x in info">
+					<td>{{x.firstname}}</td>
+					<td>{{x.lastname}}</td>
+					<td>{{x.gender}}</td>
+					<td>{{x.salary}}</td>
+					<td>￥{{x.salary}}</td>
+					<td>{{x.birthday | date:"yyyy-MM-dd"}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
+<script src="/app/libs/angular.min.js"></script>
+<script src="/app/libs/jquery.js"></script>
+<script src="/app/prd/scripts/app.js"></script>

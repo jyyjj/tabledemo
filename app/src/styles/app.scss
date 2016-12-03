@@ -1,0 +1,46 @@
+@import "./common/reset";
+p{
+	input{
+		height: 30px;
+		margin-top: 3%;
+	}
+}
+table,tr,td{
+	border-collapse:collapse;
+}
+td{
+	width: 150px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	border: 1px solid #333;
+	font-size: 14px;
+}
+td.top{
+	position: relative;
+	&:after{
+		content: "";
+		display: block;
+		width: 0;
+		height: 0;
+		border: 8px solid transparent;
+		position: absolute;
+		right: 10px;
+		top: 34%;
+		border-top-color: black;
+	}
+}
+td.bottom{
+	position: relative;
+	&:after{
+		content: "";
+		display: block;
+		width: 0;
+		height: 0;
+		border: 8px solid transparent;
+		position: absolute;
+		right: 10px;
+		bottom: 34%;
+		border-bottom-color: black;
+	}
+}
